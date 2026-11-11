@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ФОРБС — богатейшие люди планеты</title>
+<meta name="description" content="Шуточный рейтинг самых богатых людей планеты. №1 — Магеллан Жекович. Навсегда.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%91%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ed;
+  --card:#fffdf8;
+  --ink:#1b1915;
+  --muted:#7a7366;
+  --line:#e6dfd0;
+  --gold:#a8831c;
+  --gold-deep:#8c6a10;
+  --up:#1e7d46;
+  --down:#b23a2f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px}
+.topbar{background:var(--ink);color:#cfc8ba;font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:9px 16px}
+.masthead{text-align:center;padding:36px 16px 20px;border-bottom:1px solid var(--line)}
+.brand{font-family:"Playfair Display",Georgia,serif;font-weight:900;font-size:clamp(54px,13vw,92px);letter-spacing:.03em;line-height:1}
+.brand i{font-style:normal;color:var(--gold)}
+.issue{margin-top:12px;font-size:11.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.hero{text-align:center;padding:42px 16px 6px}
+.kicker{color:var(--gold);font-weight:700;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(30px,6vw,46px);margin:12px 0 12px}
+.sub{color:var(--muted);font-size:15px;max-width:480px;margin:0 auto;line-height:1.5}
+.reroll{margin-top:24px;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#f5efe2;border:0;padding:13px 24px;font:600 13px/1 Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;border-radius:999px;transition:background .2s}
+.reroll:hover{background:var(--gold-deep)}
+.reroll:active{transform:scale(.97)}
+.top1{background:linear-gradient(160deg,#fffdf6,#fbf2da);border:1px solid #e3cf96;border-radius:20px;padding:34px 22px 30px;margin:40px 0 18px;position:relative;box-shadow:0 20px 44px -26px rgba(120,90,20,.4);text-align:center}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:999px;white-space:nowrap}
+.ava1{width:106px;height:106px;border-radius:50%;margin:14px auto 4px;background:radial-gradient(circle at 30% 25%,#f3d98b,#c9a23a 60%,#9c7a1d);display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:38px;font-weight:700;color:#fff;border:3px solid #fff;box-shadow:0 12px 26px -12px rgba(120,90,20,.6);position:relative}
+.crown{position:absolute;top:-26px;left:50%;transform:translateX(-50%) rotate(-10deg);font-size:30px;filter:drop-shadow(0 3px 4px rgba(0,0,0,.2))}
+.name1{font-family:"Playfair Display",serif;font-size:clamp(28px,6.4vw,40px);font-weight:900;margin-top:10px}
+.role1{color:var(--gold);font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
+.counter{font-size:clamp(25px,5.8vw,40px);font-weight:700;margin:20px 0 4px;font-variant-numeric:tabular-nums;transition:color .35s}
+.counter.bump{color:var(--gold-deep)}
+.counter-note{font-size:12px;color:var(--muted)}
+.delta1{color:var(--up);font-weight:700;font-size:14px;margin-top:10px}
+.meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12.5px;color:#4b463c}
+.chip b{color:var(--ink);font-weight:600}
+.quote{font-family:"Playfair Display",serif;font-style:italic;font-size:17px;margin:22px auto 0;max-width:440px;color:#3c372e;line-height:1.5}
+.quote-author{font-style:normal;font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.1em;text-transform:uppercase}
+.list{list-style:none;margin:10px 0 44px;display:flex;flex-direction:column;gap:10px}
+.row{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px;animation:fadeUp .35s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rank{font-family:"Playfair Display",serif;font-weight:700;font-size:20px;color:var(--gold);min-width:30px;text-align:center;flex:none}
+.ava{width:46px;height:46px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;letter-spacing:.02em}
+.who{min-width:0;flex:1}
+.who .nm{font-weight:600;font-size:15.5px}
+.who .src{color:var(--muted);font-size:12.5px;margin-top:3px;line-height:1.35}
+.money{text-align:right;flex:none}
+.money .amt{font-weight:700;font-size:15.5px;font-variant-numeric:tabular-nums}
+.money .chg{font-size:12px;font-weight:600;margin-top:3px}
+.chg.up{color:var(--up)}
+.chg.down{color:var(--down)}
+footer{border-top:1px solid var(--line);padding:28px 16px 44px;text-align:center;color:var(--muted);font-size:12.5px;line-height:1.7}
+footer .wrap{max-width:560px}
+</style>
+</head>
+<body>
+<div class="topbar">Специальный выпуск · данные точны настолько, насколько нам захотелось</div>
+<header class="masthead">
+  <div class="brand">Ф<i>О</i>РБС</div>
+  <div class="issue">Ежегодный рейтинг · выпуск №1 · цена: бесценно</div>
+</header>
+<section class="hero wrap">
+  <div class="kicker">Рейтинг миллиардеров</div>
+  <h1>Богатейшие люди планеты — 2026</h1>
+  <p class="sub">Методология безупречна: мы просто спросили у них самих. Никто не отказался приукрасить.</p>
+  <button class="reroll" id="reroll">⟳ Пересчитать состояния</button>
+</section>
+<main class="wrap">
+  <article class="top1">
+    <div class="badge">№ 1 · навсегда</div>
+    <div class="ava1"><span class="crown">👑</span>МЖ</div>
+    <h2 class="name1">Магеллан Жекович</h2>
+    <div class="role1">Магнат · Визионер · Легенда района</div>
+    <div class="counter" id="counter">$0</div>
+    <div class="counter-note">состояние пересчитывается в реальном времени</div>
+    <div class="delta1">▲ +∞% с начала года</div>
+    <div class="meta">
+      <span class="chip"><b>Компания:</b> «Жекович Глобал Групп»</span>
+      <span class="chip"><b>Источник:</b> кругосветки и харизма</span>
+      <span class="chip"><b>Возраст:</b> в самом расцвете</span>
+      <span class="chip"><b>Резиденция:</b> везде</span>
+    </div>
+    <p class="quote">«Деньги — это не главное. Главное — что они у меня.»<br><span class="quote-author">— Магеллан Жекович, из непрошеного интервью</span></p>
+  </article>
+  <ol class="list" id="list"></ol>
+</main>
+<footer>
+  <div class="wrap">
+    Это шуточная пародийная страница, не имеющая никакого отношения к журналу Forbes.
+    Все персонажи вымышлены, состояния — тем более, совпадения случайны.
+    Кроме Магеллана Жековича: он действительно №1.
+  </div>
+</footer>
+<script>
+const maleFirst=["Валентин","Аркадий","Степан","Иннокентий","Эдуард","Остап","Прохор","Венедикт","Спиридон","Аристарх","Фрол","Никанор","Евлампий","Варфоломей","Гурий"];
+const maleLast=["Шпротов","Бетономешалкин","Пельменюк","Шлагбаумов","Сосискин","Чебуреков","Громоотводов","Батарейкин","Сквозняков","Кефиров","Плацкартов","Безлимитов","Шуруповёртов","Холодцов","Мармеладзе"];
+const femFirst=["Зинаида","Капитолина","Гликерия","Аграфена","Серафима","Изольда","Фёкла","Клавдия","Тамара","Люсьена"];
+const femLast=["Карбюраторова","Плинтусова","Сметанкина","Занавескина","Микроволновкина","Бигудина","Макаронова","Холодильникова","Шпаклёвкина","Пельмешкина"];
+const sources=["монополия на семечки у подъезда","перепродажа гаражей","стартап по аренде луж","экспорт тишины","фабрика непарных носков","крипто-голуби","сеть ларьков «У Витька»","патент на понедельник","промышленная добыча халявы","консалтинг по отмазкам","завод незакрытых вкладок","франшиза «Щас, пять минут»","импорт вайба","премиальная торговля воздухом","аренда мест в очередях","производство дырок для бубликов","логистика потерянных пультов","нефть, газ и маринованные огурцы"];
+const avaColors=["#8a6d3b","#5b7161","#6b5b7a","#7a5b5b","#4f6b7a","#7a6f4f","#5e5e6e","#6e4f5e","#4f7a6a","#7a5b45"];
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+function shuffle(a){
+  const r=[...a];
+  for(let i=r.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [r[i],r[j]]=[r[j],r[i]];
+  }
+  return r;
+}
+function makePeople(n){
+  const used=new Set();
+  const out=[];
+  const srcs=shuffle(sources);
+  while(out.length<n){
+    const fem=Math.random()<.4;
+    const nm=fem?rnd(femFirst)+" "+rnd(femLast):rnd(maleFirst)+" "+rnd(maleLast);
+    if(used.has(nm))continue;
+    used.add(nm);
+    out.push({nm,src:srcs[out.length%srcs.length],age:23+Math.floor(Math.random()*70)});
+  }
+  return out;
+}
+function initials(nm){
+  return nm.split(" ").map(w=>w[0]).join("");
+}
+function render(){
+  const list=document.getElementById("list");
+  const ppl=makePeople(11);
+  let v=760+Math.random()*140;
+  list.innerHTML="";
+  ppl.forEach((p,i)=>{
+    const chg=Math.random()*32-13;
+    const up=chg>=0;
+    const li=document.createElement("li");
+    li.className="row";
+    li.style.animationDelay=(i*45)+"ms";
+    li.innerHTML=
+      '<div class="rank">'+(i+2)+'</div>'+
+      '<div class="ava" style="background:'+avaColors[i%avaColors.length]+'">'+initials(p.nm)+'</div>'+
+      '<div class="who"><div class="nm">'+p.nm+'</div><div class="src">'+p.src+' · '+p.age+' '+(p.age%10===1&&p.age%100!==11?"год":[2,3,4].includes(p.age%10)&&![12,13,14].includes(p.age%100)?"года":"лет")+'</div></div>'+
+      '<div class="money"><div class="amt">$'+v.toLocaleString("ru-RU",{minimumFractionDigits:1,maximumFractionDigits:1})+' млрд</div>'+
+      '<div class="chg '+(up?"up":"down")+'">'+(up?"▲ +":"▼ –")+Math.abs(chg).toFixed(1)+'%</div></div>';
+    list.appendChild(li);
+    v*=.62+Math.random()*.28;
+  });
+}
+let wealth=4700000000000+Math.floor(Math.random()*90000000000);
+const counterEl=document.getElementById("counter");
+function tick(){
+  wealth+=1000+Math.floor(Math.random()*120000);
+  counterEl.textContent="$"+wealth.toLocaleString("ru-RU");
+}
+setInterval(tick,120);
+tick();
+render();
+document.getElementById("reroll").addEventListener("click",()=>{
+  render();
+  wealth+=25000000000+Math.floor(Math.random()*30000000000);
+  counterEl.classList.add("bump");
+  setTimeout(()=>counterEl.classList.remove("bump"),400);
+});
+</script>
+</body>
+</html>
